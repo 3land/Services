@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="15039natibao.CentrosCo" Publisher="CN=EEDA8B29-18CB-473A-883C-CC7F639D3158" Version="2.0.0.5" />
+  <Properties>
+    <DisplayName>CentrosCo</DisplayName>
+    <PublisherDisplayName>natibao</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="CentrosCo.App">
+      <VisualElements DisplayName="CentrosCo" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Aplicación que permite ver el nombre, la dirección, el cine de los centros comerciales." ForegroundText="light" BackgroundColor="#14a2d7">
+        <DefaultTile ShowName="allLogos" ShortName="CentrosCo" WideLogo="Assets\wide.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#14a2d7" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>
