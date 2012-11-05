@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="wappsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="wappsModelStoreContainer">
+          <EntitySet Name="Mercado" EntityType="wappsModel.Store.Mercado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="wappsModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Mercado">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Categoria" Type="varchar" MaxLength="50" />
+          <Property Name="Producto" Type="varchar" MaxLength="50" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Medida" Type="varchar" MaxLength="50" />
+          <Property Name="IdUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="PassUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wappsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="wappsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mercadoes" EntityType="wappsModel.Mercado" />
+          <EntitySet Name="Usuarios" EntityType="wappsModel.Usuario" />
+        </EntityContainer>
+        <EntityType Name="Mercado">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Categoria" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Producto" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Medida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomUsuario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PassUsuario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wappsModelStoreContainer" CdmEntityContainer="wappsEntities">
+          <EntitySetMapping Name="Mercadoes">
+            <EntityTypeMapping TypeName="wappsModel.Mercado">
+              <MappingFragment StoreEntitySet="Mercado">
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Medida" ColumnName="Medida" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="wappsModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="NomUsuario" ColumnName="NomUsuario" />
+                <ScalarProperty Name="PassUsuario" ColumnName="PassUsuario" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
